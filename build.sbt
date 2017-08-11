@@ -1,6 +1,6 @@
 // scalaVersion := "2.11.11"
 
-// enablePlugins(ScalaNativePlugin)
+enablePlugins(ScalaNativePlugin)
 val sharedSettings = Seq(scalaVersion := "2.11.11")
 
 lazy val bar =
@@ -10,7 +10,8 @@ lazy val bar =
     // (5) configure JVM settings
     .jvmSettings(/* ... */)
     // (6) configure Scala-Native settings
-    .nativeSettings(/* ... */) // defined in sbt-scala-native
+    .nativeSettings() // defined in sbt-scala-native
+
 
 lazy val barJVM    = bar.jvm
 lazy val barNative = bar.native
